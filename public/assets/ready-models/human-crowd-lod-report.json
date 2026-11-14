@@ -1,0 +1,277 @@
+[
+  {
+    "source": "public/assets/ready-models/sam-locomotion.glb",
+    "output": "public/assets/ready-models/sam-locomotion-crowd-lod.glb",
+    "sourceSha256": "b29700eeba1607d879f85f0a93a58ad458d5397ec509226826b0868b2ce40777",
+    "outputSha256": "c361a2ef5de81bc1d1074cf979448d2c97f4cf846b5269791ff938a5c80ca521",
+    "before": 91610,
+    "after": 52870,
+    "triangleReduction": 0.4228795982971292,
+    "maxRelativeMetric": 0.000999682117253542,
+    "sourceBytes": 21872144,
+    "outputBytes": 22192232,
+    "originalBytesPreserved": true,
+    "rigAndTextureReferencesPreserved": true,
+    "primitives": [
+      {
+        "mesh": "eyebrow001",
+        "primitive": 0,
+        "sourceTriangles": 192,
+        "lodTriangles": 192,
+        "lockedVertices": 0,
+        "vertices": 124,
+        "relativeError": 0
+      },
+      {
+        "mesh": "eyelashes01",
+        "primitive": 0,
+        "sourceTriangles": 368,
+        "lodTriangles": 368,
+        "lockedVertices": 0,
+        "vertices": 250,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Hairline | fine scalp roots",
+        "primitive": 0,
+        "sourceTriangles": 8880,
+        "lodTriangles": 8088,
+        "lockedVertices": 0,
+        "vertices": 9592,
+        "relativeError": 0.000975588453002274
+      },
+      {
+        "mesh": "low-poly",
+        "primitive": 0,
+        "sourceTriangles": 172,
+        "lodTriangles": 172,
+        "lockedVertices": 0,
+        "vertices": 96,
+        "relativeError": 0
+      },
+      {
+        "mesh": "male_casualsuit02",
+        "primitive": 0,
+        "sourceTriangles": 2408,
+        "lodTriangles": 2408,
+        "lockedVertices": 984,
+        "vertices": 1364,
+        "relativeError": 0
+      },
+      {
+        "mesh": "male_casualsuit02",
+        "primitive": 1,
+        "sourceTriangles": 1712,
+        "lodTriangles": 1712,
+        "lockedVertices": 505,
+        "vertices": 950,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Ankle lining l",
+        "primitive": 0,
+        "sourceTriangles": 280,
+        "lodTriangles": 280,
+        "lockedVertices": 80,
+        "vertices": 160,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Ankle lining r",
+        "primitive": 0,
+        "sourceTriangles": 280,
+        "lodTriangles": 280,
+        "lockedVertices": 80,
+        "vertices": 160,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Original held accessory",
+        "primitive": 0,
+        "sourceTriangles": 188,
+        "lodTriangles": 188,
+        "lockedVertices": 0,
+        "vertices": 384,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Original held accessory",
+        "primitive": 1,
+        "sourceTriangles": 188,
+        "lodTriangles": 188,
+        "lockedVertices": 0,
+        "vertices": 384,
+        "relativeError": 0
+      },
+      {
+        "mesh": "base",
+        "primitive": 0,
+        "sourceTriangles": 63264,
+        "lodTriangles": 25320,
+        "lockedVertices": 7540,
+        "vertices": 42378,
+        "relativeError": 0.000999682117253542
+      },
+      {
+        "mesh": "shoes01",
+        "primitive": 0,
+        "sourceTriangles": 2880,
+        "lodTriangles": 2876,
+        "lockedVertices": 0,
+        "vertices": 1670,
+        "relativeError": 0.0007593889022246003
+      },
+      {
+        "mesh": "short01",
+        "primitive": 0,
+        "sourceTriangles": 3678,
+        "lodTriangles": 3678,
+        "lockedVertices": 164,
+        "vertices": 3050,
+        "relativeError": 0
+      },
+      {
+        "mesh": "teeth_base",
+        "primitive": 0,
+        "sourceTriangles": 7120,
+        "lodTriangles": 7120,
+        "lockedVertices": 0,
+        "vertices": 4494,
+        "relativeError": 0
+      }
+    ]
+  },
+  {
+    "source": "public/assets/ready-models/harper-walk.glb",
+    "output": "public/assets/ready-models/harper-walk-crowd-lod.glb",
+    "sourceSha256": "ab3fa8b1580c6ccf8bfe8bc7d4422bb483f04d4cf4d2f82f215b9bbe713bfcf9",
+    "outputSha256": "f5ac86d3c78b0818b4545226124fe7a7c8fc8c068bdb3fc0d63dc5d5f3183177",
+    "before": 101414,
+    "after": 62646,
+    "triangleReduction": 0.3822746366379395,
+    "maxRelativeMetric": 0.0009895286057144403,
+    "sourceBytes": 18712152,
+    "outputBytes": 19090712,
+    "originalBytesPreserved": true,
+    "rigAndTextureReferencesPreserved": true,
+    "primitives": [
+      {
+        "mesh": "Original held accessory",
+        "primitive": 0,
+        "sourceTriangles": 752,
+        "lodTriangles": 752,
+        "lockedVertices": 0,
+        "vertices": 1536,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Original held accessory",
+        "primitive": 1,
+        "sourceTriangles": 188,
+        "lodTriangles": 188,
+        "lockedVertices": 0,
+        "vertices": 384,
+        "relativeError": 0
+      },
+      {
+        "mesh": "eyebrow006",
+        "primitive": 0,
+        "sourceTriangles": 192,
+        "lodTriangles": 192,
+        "lockedVertices": 0,
+        "vertices": 124,
+        "relativeError": 0
+      },
+      {
+        "mesh": "eyelashes01",
+        "primitive": 0,
+        "sourceTriangles": 368,
+        "lodTriangles": 368,
+        "lockedVertices": 0,
+        "vertices": 250,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Hairline | fine scalp roots",
+        "primitive": 0,
+        "sourceTriangles": 8880,
+        "lodTriangles": 8030,
+        "lockedVertices": 0,
+        "vertices": 9391,
+        "relativeError": 0.0009895286057144403
+      },
+      {
+        "mesh": "base",
+        "primitive": 0,
+        "sourceTriangles": 61920,
+        "lodTriangles": 24768,
+        "lockedVertices": 7434,
+        "vertices": 41515,
+        "relativeError": 0.0009042734163813293
+      },
+      {
+        "mesh": "low-poly",
+        "primitive": 0,
+        "sourceTriangles": 172,
+        "lodTriangles": 172,
+        "lockedVertices": 0,
+        "vertices": 96,
+        "relativeError": 0
+      },
+      {
+        "mesh": "male_elegantsuit01",
+        "primitive": 0,
+        "sourceTriangles": 14956,
+        "lodTriangles": 14224,
+        "lockedVertices": 3162,
+        "vertices": 8250,
+        "relativeError": 0.0009754237253218889
+      },
+      {
+        "mesh": "Ankle lining l",
+        "primitive": 0,
+        "sourceTriangles": 280,
+        "lodTriangles": 280,
+        "lockedVertices": 80,
+        "vertices": 160,
+        "relativeError": 0
+      },
+      {
+        "mesh": "Ankle lining r",
+        "primitive": 0,
+        "sourceTriangles": 280,
+        "lodTriangles": 280,
+        "lockedVertices": 80,
+        "vertices": 160,
+        "relativeError": 0
+      },
+      {
+        "mesh": "shoes04",
+        "primitive": 0,
+        "sourceTriangles": 2628,
+        "lodTriangles": 2594,
+        "lockedVertices": 0,
+        "vertices": 1536,
+        "relativeError": 0.0008548612822778523
+      },
+      {
+        "mesh": "short01",
+        "primitive": 0,
+        "sourceTriangles": 3678,
+        "lodTriangles": 3678,
+        "lockedVertices": 164,
+        "vertices": 3050,
+        "relativeError": 0
+      },
+      {
+        "mesh": "teeth_base",
+        "primitive": 0,
+        "sourceTriangles": 7120,
+        "lodTriangles": 7120,
+        "lockedVertices": 0,
+        "vertices": 4494,
+        "relativeError": 0
+      }
+    ]
+  }
+]

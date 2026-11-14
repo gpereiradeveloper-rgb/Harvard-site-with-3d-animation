@@ -1,0 +1,32 @@
+{
+  "source": "https://kenney-assets.itch.io/conveyor-kit",
+  "author": "Kenney",
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "file": "scanner-high.glb",
+      "bytes": 10144,
+      "sha256": "88e2ebf8da71da2ecdedffa199ff026da09a97b25c36812c233ce82564253439"
+    },
+    {
+      "file": "scanner-low.glb",
+      "bytes": 10128,
+      "sha256": "25b181e3fec952fe169acb5f84104b7be40c49e08ef631dc1964d98dfd4cc52c"
+    },
+    {
+      "file": "conveyor-long.glb",
+      "bytes": 8972,
+      "sha256": "b1e6cd07578942ac84408cb24c9cf5c292fa2ef4c19eabb8e4b86af819e54c5a"
+    },
+    {
+      "file": "conveyor-bars.glb",
+      "bytes": 12820,
+      "sha256": "f9d75360dd43d4c17a6a8bee624d1e2be88415506c9ce36f5caa8c708be206f0"
+    },
+    {
+      "file": "conveyor-bars-sides.glb",
+      "bytes": 16932,
+      "sha256": "fc7584f8bf16cee5395b75eddfae70818090f44d414636e0eccd2008bdf96879"
+    }
+  ]
+}

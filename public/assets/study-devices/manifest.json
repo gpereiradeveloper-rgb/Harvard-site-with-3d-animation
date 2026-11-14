@@ -1,0 +1,20 @@
+{
+  "updated": "2026-11-13",
+  "assets": {
+    "jansport-backpack": {
+      "file": "jansport-backpack.glb",
+      "bytes": 1257144,
+      "sha256": "450b23b958a6a820ad667c2bab0f44e720258ff7e6d966f7cca06e30ac750032"
+    },
+    "macbook-pro-13": {
+      "file": "macbook-pro-13.glb",
+      "bytes": 3646128,
+      "sha256": "a7a8e9aa65bf7844f399c02772f72c4bd44e8dd02da846042c73c6d227ee2fb5"
+    },
+    "ipad-mini-6": {
+      "file": "ipad-mini-6.glb",
+      "bytes": 1986244,
+      "sha256": "a462088b7bd84b7752802c109beee04110047c3b1a4f355624c863f790e93d5e"
+    }
+  }
+}

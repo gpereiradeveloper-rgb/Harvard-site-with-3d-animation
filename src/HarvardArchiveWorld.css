@@ -1,0 +1,10 @@
+.archive-world-canvas-stage{position:relative;width:100%;height:100%}
+.archive-receiving-focus{position:absolute;z-index:14;right:4%;bottom:92px;display:flex;align-items:center;justify-content:center;gap:11px;min-height:46px;padding:11px 17px;border:1px solid #a51c304d;border-radius:4px;background:#faf8f0f2;color:#842538;box-shadow:0 4px 18px #192d3612;font:600 11px/1.4 'Manrope',Arial,sans-serif;letter-spacing:.025em;cursor:pointer;pointer-events:auto;transition:background .2s,box-shadow .2s}
+.archive-receiving-focus[hidden]{display:none}
+.archive-receiving-focus:hover{background:#fffdf7;box-shadow:0 5px 22px #192d3624}
+.archive-receiving-focus:focus-visible{outline:2px solid #a51c30;outline-offset:4px}
+.archive-receiving-focus[aria-pressed=true]{background:#21343df5;color:#f7ead2;border-color:#b59c7080}
+.archive-receiving-focus>span:first-child{font-size:18px;font-weight:400}
+.has-receiving-focus .archive-editorial,.has-receiving-focus .archive-world-hotspot,.has-receiving-focus .hj-world-label{visibility:hidden!important;pointer-events:none!important}
+@media(max-width:760px){.archive-receiving-focus{right:5%;bottom:132px;min-height:44px;padding:10px 13px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.archive-receiving-focus{transition:none}}

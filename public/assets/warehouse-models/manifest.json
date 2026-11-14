@@ -1,0 +1,74 @@
+[
+  {
+    "id": "forklift",
+    "source": "https://www.innerscene.com/tools/library/3d-parts/electric-counterbalance-forklift-7acc0547",
+    "download": "https://files.innerscene.com/library/electric-counterbalance-forklift-7acc0547/a424f0d715c580961635/forklift-original.glb",
+    "license": "CC0-1.0",
+    "bytes": 706388,
+    "sha256": "2233d072b7aba870c9a41bfb36782116195d3e14e7e05ef2348bbb44a278e326"
+  },
+  {
+    "id": "pallet-jack",
+    "source": "https://www.innerscene.com/tools/library/3d-parts/manual-pallet-jack-5ff28a4a",
+    "download": "https://files.innerscene.com/library/manual-pallet-jack-5ff28a4a/f463076a25778a7dd9f9/pallet-jack-original.glb",
+    "license": "CC0-1.0",
+    "bytes": 98608,
+    "sha256": "494fd31c6d9e7ecb46afb2a0f9e8eacd107722b5eb3801de554d63a5a9b3de7f"
+  },
+  {
+    "id": "rack",
+    "source": "https://www.innerscene.com/tools/library/3d-parts/pallet-racking-bay-with-pallets-821e591f",
+    "download": "https://files.innerscene.com/library/pallet-racking-bay-with-pallets-821e591f/7bf1860a3ec10a6be2d1/pallet-racking-bay-with-pallets.glb",
+    "license": "CC0-1.0",
+    "bytes": 588380,
+    "sha256": "c1d15e6fb37ca2255477f32c1ebd9c2626fac95f6cf77bf5723aaecb2bb4a1bf"
+  },
+  {
+    "id": "barcode-scanner",
+    "source": "https://www.innerscene.com/tools/library/3d-parts/scan-grip-barcode-scanner-fc41ed60",
+    "download": "https://files.innerscene.com/library/scan-grip-barcode-scanner-fc41ed60/9300a7a3dbacc509cda9/barcode-handheld-scanner.glb",
+    "license": "CC0-1.0",
+    "bytes": 113384,
+    "sha256": "48eab7b169e6cf2a6fbe79f6088b8696c9861928118348dbe91eb2c84cc93520"
+  },
+  {
+    "id": "cardboard_box_01",
+    "source": "https://polyhaven.com/a/cardboard_box_01",
+    "license": "CC0-1.0",
+    "file": "cardboard_box_01-1k.glb",
+    "sha256": "6c496c2c0e3baf27af5b4f80485e7123bec4b42b2a9455c5a3921879e21876eb",
+    "bytes": 2167428,
+    "sources": [
+      {
+        "file": "cardboard_box_01.gltf",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/cardboard_box_01/cardboard_box_01_1k.gltf",
+        "md5": "84572b118cc3640acdd9e978869bb3ee",
+        "bytes": 2903
+      },
+      {
+        "file": "textures/cardboard_box_01_arm_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cardboard_box_01/cardboard_box_01_arm_1k.jpg",
+        "md5": "39ea452f95d71ec1362e47dff453c706",
+        "bytes": 398433
+      },
+      {
+        "file": "cardboard_box_01.bin",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/cardboard_box_01/cardboard_box_01.bin",
+        "md5": "64bea3a77434981017b8a06da4ccb0df",
+        "bytes": 381936
+      },
+      {
+        "file": "textures/cardboard_box_01_diff_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cardboard_box_01/cardboard_box_01_diff_1k.jpg",
+        "md5": "a306e586325d1759ba3225d2b6ad5121",
+        "bytes": 567741
+      },
+      {
+        "file": "textures/cardboard_box_01_nor_gl_1k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cardboard_box_01/cardboard_box_01_nor_gl_1k.jpg",
+        "md5": "24768abd73f71cfdd7f5be92b18634a7",
+        "bytes": 817424
+      }
+    ]
+  }
+]

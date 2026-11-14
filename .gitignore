@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.sites-runtime/
+.DS_Store
+*.log
+
+.env.local
+.env.*.local
+
+# Local configuration and authoring scratch files
+.env
+.env.*
+.dev.vars*
+work/
