@@ -1,0 +1,33 @@
+name: Import verified Harvard project
+on:
+  push:
+    paths: ['.github/workflows/import-project.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.run_number == 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify the prepared project
+        run: |
+          curl --fail --location --retry 3 --max-time 600 --output /tmp/harvard.zip https://eric-reliance-specifies-supervisors.trycloudflare.com/source.zip
+          echo 'f2750490b51e6ee0787d45724297ed414eac12ad21ea5c3f6bc148a3a3c7d6d9  /tmp/harvard.zip' | sha256sum --check
+          unzip -q /tmp/harvard.zip -d /tmp/harvard-source
+          rsync -a --exclude='.github/' /tmp/harvard-source/harvard-veritas/ ./
+      - name: Save source and licensed models
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit -m 'Publish Harvard atelier with scanner, licensed models and verified logistics'
+          git push origin HEAD:main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
