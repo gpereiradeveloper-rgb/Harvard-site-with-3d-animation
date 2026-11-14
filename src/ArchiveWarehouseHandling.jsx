@@ -143,7 +143,7 @@ function ReceivingStations(){
 /** Original Kenney CC0 scanner/cover/conveyor meshes, with studio materials. */
 function ScannerPart({name,position,scale,finish='shell'}){
  const {scene}=useGLTF('/assets/kenney-conveyor/'+name+'.glb');
- const kit=useMemo(()=>{const root=scene.clone(true),materials=[];root.traverse(m=>{if(!m.isMesh)return;const original=m.material;const mat=new THREE.MeshPhysicalMaterial({color:finish==='shell'?'#e9e7df':finish==='frame'?'#a7b1b5':'#263741',metalness:finish==='frame'?.74:.22,roughness:finish==='shell'?.24:.35,clearcoat:finish==='shell'?.65:.2,clearcoatRoughness:.22,envMapIntensity:1.1});materials.push(mat);m.material=mat;m.castShadow=true;m.receiveShadow=true;});return{root,materials};},[scene,finish]);
+ const kit=useMemo(()=>{const root=scene.clone(true),materials=[];root.traverse(m=>{if(!m.isMesh)return;const original=m.material;const mat=new THREE.MeshPhysicalMaterial({color:finish==='shell'?'#e9e7df':finish==='frame'?'#293337':'#263741',metalness:finish==='frame'?.42:.08,roughness:finish==='shell'?.21:.32,clearcoat:finish==='shell'?.82:.28,clearcoatRoughness:.22,envMapIntensity:1.1});materials.push(mat);m.material=mat;m.castShadow=true;m.receiveShadow=true;});return{root,materials};},[scene,finish]);
  useEffect(()=>()=>kit.materials.forEach(m=>m.dispose()),[kit]);
  return <group position={position} scale={scale} name={'Kenney original '+name+' — CC0'}><primitive object={kit.root} dispose={null}/></group>;
 }
@@ -151,7 +151,7 @@ function ScannerGate({time}) {
  const beam=useRef(),lamp=useRef(),ribs=useRef(),scanVolume=useRef(),scanSlice=useRef(),previous=useRef(''),matrix=useMemo(()=>new THREE.Object3D(),[]);
  const scanEdges=useMemo(()=>{const box=new THREE.BoxGeometry(SUPPLY_CASE_SIZE[0]+.018,SUPPLY_CASE_SIZE[1]+.018,SUPPLY_CASE_SIZE[2]+.018),edges=new THREE.EdgesGeometry(box);box.dispose();return edges;},[]);
  useEffect(()=>()=>scanEdges.dispose(),[scanEdges]);
- const display=useMemo(()=>{const canvas=document.createElement('canvas');canvas.width=768;canvas.height=320;const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return{canvas,texture};},[]);
+ const display=useMemo(()=>{const canvas=document.createElement('canvas');canvas.width=1024;canvas.height=768;const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return{canvas,texture};},[]);
  useEffect(()=>()=>display.texture.dispose(),[display]);
  useFrame(()=>{
   const state=supplyChainAt(clock(time)),scan=state.scanner;
@@ -159,7 +159,17 @@ function ScannerGate({time}) {
   beam.current.visible=scan.active;lamp.current.material.emissiveIntensity=scan.active?2.0:.22;
   lamp.current.material.color.set(scan.active?'#84e5b1':'#9caf9b');
   const key=scan.count+':'+scan.caseId;
-  if(previous.current!==key){previous.current=key;const c=display.canvas.getContext('2d');c.fillStyle='#142a34';c.fillRect(0,0,768,320);c.fillStyle='#d5bc82';c.font='600 38px Georgia';c.fillText('HARVARD  /  LEITURA 3D',40,58);c.fillStyle='#f1f0e9';c.font='500 98px sans-serif';c.fillText(String(scan.count).padStart(2,'0')+' / 05',40,175);c.font='25px sans-serif';c.fillStyle=scan.active?'#94e8bc':'#c2cbc7';c.fillText(scan.active?'VOLUME '+String(scan.caseId+1).padStart(2,'0')+' · 30 × 27 × 40 CM':'VOLUMES CONFERIDOS · 30 × 27 × 40 CM',42,230);c.fillStyle='#61767a';c.fillRect(40,269,680,6);c.fillStyle='#a5dbc2';c.fillRect(40,269,680*scan.count/5,6);display.texture.needsUpdate=true;}
+  if(previous.current!==key){
+   previous.current=key;const c=display.canvas.getContext('2d');c.fillStyle='#f3f2ec';c.fillRect(0,0,1024,768);
+   c.fillStyle='#8d283e';c.fillRect(0,0,1024,160);c.fillStyle='#fff8ec';c.font='600 66px Georgia';c.fillText('HARVARD',44,106);
+   let bx=625;for(let i=0;i<48;i++){const width=[3,7,3,11,5,3,9][i%7];c.fillRect(bx,37,width,86);bx+=width+3;}
+   c.fillStyle='#d7d0e6';c.beginPath();c.roundRect(48,218,286,286,30);c.fill();c.strokeStyle='#8d283e';c.lineWidth=13;
+   c.strokeRect(117,277,145,123);c.beginPath();c.moveTo(117,277);c.lineTo(190,241);c.lineTo(262,277);c.moveTo(190,241);c.lineTo(190,366);c.moveTo(117,400);c.lineTo(190,437);c.lineTo(262,400);c.stroke();
+   c.fillStyle='#5e6261';c.font='500 37px sans-serif';c.fillText('VOLUMES CONFERIDOS',382,247);c.fillStyle='#293337';c.font='600 151px sans-serif';c.fillText(String(scan.count).padStart(2,'0')+' / 05',376,422);
+   c.fillStyle=scan.active?'#8d283e':'#747876';c.font='600 42px sans-serif';c.fillText(scan.active?'LENDO VOLUME '+String(scan.caseId+1).padStart(2,'0'):'LEITURA TRIDIMENSIONAL',382,497);
+   c.fillStyle='#dddcd5';c.fillRect(48,559,928,8);c.fillStyle='#8d283e';c.fillRect(48,559,928*scan.count/scan.total,8);
+   c.fillStyle='#293337';c.font='500 55px sans-serif';c.fillText('30 × 27 × 40 cm',48,660);c.fillStyle='#8b8d87';c.font='28px sans-serif';c.fillText('RECEBIMENTO  /  VERITAS',48,715);display.texture.needsUpdate=true;
+  }
   const moving=state.cases.some(c=>c.host==='scanner-conveyor'),offset=moving?(clock(time)*.34)%.11:0;
   for(let i=0;i<16;i++){matrix.position.set(9.76+(i*.11+offset)%1.76,1.018,-.65);matrix.scale.set(.008,.005,.53);matrix.updateMatrix();ribs.current.setMatrixAt(i,matrix.matrix);}ribs.current.instanceMatrix.needsUpdate=true;
  });
@@ -171,17 +181,24 @@ function ScannerGate({time}) {
    {[-1,1].map(side=><mesh key={side} position={[0,SUPPLY_CASE_SIZE[1]/2+.013,side*(SUPPLY_CASE_SIZE[2]/2+.012)]}><boxGeometry args={[SUPPLY_CASE_SIZE[0]+.024,.005,.005]}/><meshBasicMaterial color="#dbb6ff" toneMapped={false}/></mesh>)}
   </group>
   <ScannerPart name="conveyor-long" position={[10.62,.85,z]} scale={[.88,.41,.57]} finish="belt"/>
-  <ScannerPart name="cover" position={[x,.99,z]} scale={[.44,.58,.52]}/>
-  <ScannerPart name="scanner-high" position={[x,.98,z]} scale={[.70,.60,.45]} finish="frame"/>
+  <ScannerPart name="cover" position={[x,1.02,z]} scale={[.70,.40,.44]}/>
+  {/* The rounded resin casing preserves a real opening around the parcel. Its
+      clear tunnel is 43cm wide and clears the 26.5cm carton by 15cm above. */}
+  {[-1,1].map(side=><RoundedBox key={'resin-side-'+side} args={[.70,1.45,.05]} radius={.022} smoothness={4} position={[x,.820,z+side*.24]} castShadow receiveShadow><meshPhysicalMaterial color="#ecece5" roughness={.22} metalness={.04} clearcoat={.9} clearcoatRoughness={.19}/></RoundedBox>)}
+  <RoundedBox args={[.70,.13,.53]} radius={.035} smoothness={5} position={[x,1.545,z]} castShadow receiveShadow><meshPhysicalMaterial color="#f1f0e8" roughness={.21} clearcoat={.88} clearcoatRoughness={.18}/></RoundedBox>
+  {[-1,1].map(side=><RoundedBox key={'graphite-jamb-'+side} args={[.07,.43,.04]} radius={.009} position={[x+.35,1.235,z+side*.245]} castShadow><meshPhysicalMaterial color="#293337" metalness={.40} roughness={.30}/></RoundedBox>)}
+  <RoundedBox args={[.07,.055,.53]} radius={.012} position={[x+.35,1.465,z]} castShadow><meshPhysicalMaterial color="#293337" metalness={.40} roughness={.30}/></RoundedBox>
+  {[-.22,0,.22].map(dx=><RoundedBox key={'vent-'+dx} args={[.125,.026,.004]} radius={.007} position={[x+dx,1.35,z+.267]}><meshStandardMaterial color="#3d4445" roughness={.6}/></RoundedBox>)}
+  <ScannerPart name="scanner-high" position={[x+.30,1.015,z]} scale={[.12,.36,.36]} finish="frame"/>
   {[9.94,10.53,11.24].flatMap(px=>[-1,1].map(side=><RoundedBox key={px+':'+side} args={[.045,.82,.045]} radius={.008} position={[px,.505,z+side*.24]} castShadow><meshStandardMaterial color="#8f9ba0" metalness={.72} roughness={.28}/></RoundedBox>))}
   <instancedMesh ref={ribs} args={[undefined,undefined,16]} receiveShadow><boxGeometry/><meshStandardMaterial color="#435057" metalness={.3} roughness={.48}/></instancedMesh>
-  {[-1,1].map(side=><RoundedBox key={side} args={[.47,.025,.028]} radius={.009} position={[x,1.47,z+side*.315]}><meshPhysicalMaterial color="#b89c68" metalness={.8} roughness={.24}/></RoundedBox>)}
-  <group position={[x+.12,1.255,z-.24]} rotation={[0,Math.PI,0]} scale={.55}><StaticReady url={URLS.scanner} position={[0,0,0]} rotation={[0,0,-Math.PI/2]}/></group>
-  <RoundedBox args={[.40,.22,.035]} radius={.022} position={[x,1.565,z+.385]} castShadow><meshPhysicalMaterial color="#263d49" roughness={.25} metalness={.45}/></RoundedBox>
-  <mesh position={[x,1.567,z+.404]}><planeGeometry args={[.365,.152]}/><meshBasicMaterial map={display.texture} toneMapped={false}/></mesh>
-  <mesh ref={lamp} position={[x+.18,1.70,z+.3]}><sphereGeometry args={[.023,16,10]}/><meshStandardMaterial color="#84e5b1" emissive="#62cc91" emissiveIntensity={.2}/></mesh>
-  <mesh ref={beam} position={[x,1.20,z]} rotation={[0,Math.PI/2,0]} visible={false}><planeGeometry args={[.52,.38]}/><meshBasicMaterial color="#f75045" transparent opacity={.18} side={THREE.DoubleSide} depthWrite={false} toneMapped={false}/></mesh>
-  {[-1,1].map(side=><mesh key={side} position={[x,1.24,z+side*.27]}><boxGeometry args={[.012,.36,.012]}/><meshStandardMaterial color="#b73e41" emissive="#b93736" emissiveIntensity={.55}/></mesh>)}
+  <group position={[x-.22,1.65,z+.08]} rotation={[0,Math.PI,0]} scale={.35}><StaticReady url={URLS.scanner} position={[0,0,0]} rotation={[0,0,-Math.PI/2]}/></group>
+  {[-1,1].map(side=><RoundedBox key={'display-foot-'+side} args={[.055,.15,.06]} radius={.012} position={[x+side*.27,1.64,z-.04]} castShadow><meshPhysicalMaterial color="#c3c8c5" metalness={.65} roughness={.26}/></RoundedBox>)}
+  <RoundedBox args={[.82,.67,.085]} radius={.045} smoothness={5} position={[x,1.985,z-.04]} castShadow receiveShadow><meshPhysicalMaterial color="#e8e8e0" roughness={.23} clearcoat={.8} clearcoatRoughness={.2}/></RoundedBox>
+  <mesh position={[x,1.985,z+.005]}><planeGeometry args={[.752,.564]}/><meshBasicMaterial map={display.texture} toneMapped={false}/></mesh>
+  <mesh ref={lamp} position={[x+.35,1.51,z+.20]}><sphereGeometry args={[.018,16,10]}/><meshStandardMaterial color="#84e5b1" emissive="#62cc91" emissiveIntensity={.2}/></mesh>
+  <mesh ref={beam} position={[x+.31,1.225,z]} rotation={[0,Math.PI/2,0]} visible={false}><planeGeometry args={[.42,.38]}/><meshBasicMaterial color="#ee4853" transparent opacity={.17} side={THREE.DoubleSide} depthWrite={false} toneMapped={false}/></mesh>
+  {[-1,1].map(side=><mesh key={'optical-strip-'+side} position={[x+.345,1.235,z+side*.222]}><boxGeometry args={[.008,.35,.006]}/><meshStandardMaterial color="#a63649" emissive="#b93746" emissiveIntensity={.30}/></mesh>)}
  </group>;
 }
 
